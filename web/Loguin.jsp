@@ -34,7 +34,7 @@
                             <label>Password:</label>
                             <input type="password" name="txtpass" class="form-control">
                         </div>
-                        <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-block">
+                        <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-block justify-content-end">
                     </form>
                 </div>
             </div>
