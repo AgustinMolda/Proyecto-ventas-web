@@ -23,16 +23,16 @@
                     <div class="collapse navbar-collapse" id="collapsibleNavbar">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a style="margin-left: 10px; border: none;" class="btn btn-outline-light" href="Controlador?accion=Cliente" target="myFrame">Clientes</a>
+                                <a style="margin-left: 10px; border: none;" class="btn btn-outline-light" href="Controlador?menu=Cliente&accion=Listar" target="myFrame">Clientes</a>
                             </li>
                             <li class="nav-item">
-                                 <a style="margin-left: 10px; border: none;" class="btn btn-outline-light"  href="Controlador?accion=Producto" target="myFrame">Productos</a>
+                                 <a style="margin-left: 10px; border: none;" class="btn btn-outline-light"  href="Controlador?menu=Producto" target="myFrame">Productos</a>
                             </li>
                             <li class="nav-item">
-                                 <a style="margin-left: 10px; border: none;" class="btn btn-outline-light" href="Controlador?accion=Venta" target="myFrame">Venta</a>
+                                 <a style="margin-left: 10px; border: none;" class="btn btn-outline-light" href="Controlador?menu=Venta" target="myFrame">Venta</a>
                             </li>
                             <li class="nav-item">
-                                 <a style="margin-left: 10px; border: none;" class="btn btn-outline-light" href="Controlador?accion=Cobranza" target="myFrame">Cobranzas</a>
+                                 <a style="margin-left: 10px; border: none;" class="btn btn-outline-light" href="Controlador?menu=Cobranza" target="myFrame">Cobranzas</a>
                             </li>
                         </ul>
                         </div>
@@ -45,7 +45,9 @@
                             </button>
                             <div class="dropdown-menu text-center">
                               
-                                
+                                <div>
+                                    <a href="#"> gentionar cuenta</a>
+                                </div>
                                     
                             <div class="dropdown-divider"></div>
                             <form action="Validar" method="POST">     

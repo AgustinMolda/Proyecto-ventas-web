@@ -38,12 +38,13 @@
       </li>
      
     </ul>
-       <div class="navbar navbar-right bg-dark navbar-dark">
+      
+  </div>
+   <div class="navbar navbar-right bg-dark navbar-dark">
            
-          <a href="Loguin.jsp"> <button type="submit" class="btn btn-outline-primary">ingresar</button></a>
+          <a href="Loguin.jsp"> <button type="submit" class="btn btn-outline-success">ingresar</button></a>
           
       </div>
-  </div>
   
 </nav>
 
