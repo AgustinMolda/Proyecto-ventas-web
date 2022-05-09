@@ -42,7 +42,7 @@
   </div>
    <div class="navbar navbar-right bg-dark navbar-dark">
            
-          <a href="Loguin.jsp"> <button type="submit" class="btn btn-outline-success">ingresar</button></a>
+          <a href="Loguin.jsp"> <button type="submit" class="btn btn-success">ingresar</button></a>
           
       </div>
   

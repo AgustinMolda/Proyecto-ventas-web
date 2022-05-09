@@ -78,7 +78,7 @@
                     <td>${cli.getNombre()}</td>
                     <td>${cli.getZona()}</td>
                     <td>${cli.getTelefono()}</td>
-                    <td>${cli. getDireccion()}</td>
+                    <td>${cli.getDireccion()}</td>
                     <td>${cli.getSaldo()}</td>
                     <td>${cli.getEstado()}</td>
                     <td>

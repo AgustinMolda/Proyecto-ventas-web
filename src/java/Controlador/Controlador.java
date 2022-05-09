@@ -7,6 +7,8 @@ package Controlador;
 
 import Modelo.Cliente;
 import Modelo.ClienteDAO;
+import Modelo.Producto;
+import Modelo.ProductoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -24,6 +26,8 @@ public class Controlador extends HttpServlet {
             Cliente cli =  new Cliente();
             ClienteDAO clidao = new ClienteDAO();
             private int ide;
+            Producto pro = new Producto();
+            ProductoDAO pdao = new ProductoDAO();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             String menu = request.getParameter("menu");
@@ -102,6 +106,79 @@ public class Controlador extends HttpServlet {
                  request.getRequestDispatcher("Clientes.jsp").forward(request, response);
             }
             if(menu.equalsIgnoreCase("Producto")){
+                switch(accion){
+                    case "Listar":
+                            List lista = pdao.listar();                            
+                            request.setAttribute("productos", lista);
+                             break;
+                        
+                    case "Agregar":
+                         String codigo = request.getParameter("txtCodigo");
+                         String linea = request.getParameter("txtLinea");
+                         String nombre = request.getParameter("txtNombre");
+                         String numeracion = request.getParameter("txtNumeracion");
+                         String descripcion = request.getParameter("txtDescripcion");
+                         String stock = request.getParameter("txtStock");
+                         String precio = request.getParameter("txtPrecio");
+                         String proveedor = request.getParameter("txtProveedor");
+                         String estado = request.getParameter("txtEstado");
+                         
+                         pro.setCodigo(codigo);
+                         pro.setLinea(linea);
+                         pro.setNombre(nombre);
+                         pro.setNumeracion(Integer.parseInt(numeracion));
+                         pro.setDescripcion(descripcion);
+                         pro.setStock(Integer.parseInt(stock));
+                         pro.setPrecio(Float.parseFloat(precio));
+                         pro.setProovedor(proveedor);
+                         pro.setEstado(estado);
+                         pdao.agregar(pro);
+                          request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                        break;
+                        
+                    case "Editar":
+                            ide = Integer.parseInt(request.getParameter("id"));
+                            Producto pr = pdao.listarId(ide);
+                            request.setAttribute("pro", pr);
+                            request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                        break;
+                 
+                    case "Actualizar":
+                         String codigo1 = request.getParameter("txtCodigo");
+                         String linea1 = request.getParameter("txtLinea");
+                         String nombre1 = request.getParameter("txtNombre");
+                         String numeracion1 = request.getParameter("txtNumeracion");
+                         String descripcion1 = request.getParameter("txtDescripcion");
+                         String stock1 = request.getParameter("txtStock");
+                         String precio1 = request.getParameter("txtPrecio");
+                         String proveedor1 = request.getParameter("txtProveedor");
+                         String estado1 = request.getParameter("txtEstado");
+                         
+                         pro.setCodigo(codigo1);
+                         pro.setLinea(linea1);
+                         pro.setNombre(nombre1);
+                         pro.setNumeracion(Integer.parseInt(numeracion1));
+                         pro.setDescripcion(descripcion1);
+                         pro.setStock(Integer.parseInt(stock1));
+                         pro.setPrecio(Float.parseFloat(precio1));
+                         pro.setProovedor(proveedor1);
+                         pro.setEstado(estado1);
+                         pro.setIdProducto(ide);
+                         
+                         pdao.actualizar(pro);
+                        request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                        break;
+                        
+                    case "Eliminar":
+                            ide = Integer.parseInt(request.getParameter("id"));
+                            pdao.eliminar(ide);
+                            request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                        
+                        break;
+                }
+                    
+               
+                
                  request.getRequestDispatcher("Producto.jsp").forward(request, response);
             }
             if(menu.equalsIgnoreCase("Cobranza")){

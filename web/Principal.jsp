@@ -26,7 +26,7 @@
                                 <a style="margin-left: 10px; border: none;" class="btn btn-outline-light" href="Controlador?menu=Cliente&accion=Listar" target="myFrame">Clientes</a>
                             </li>
                             <li class="nav-item">
-                                 <a style="margin-left: 10px; border: none;" class="btn btn-outline-light"  href="Controlador?menu=Producto" target="myFrame">Productos</a>
+                                 <a style="margin-left: 10px; border: none;" class="btn btn-outline-light"  href="Controlador?menu=Producto&accion=Listar" target="myFrame">Productos</a>
                             </li>
                             <li class="nav-item">
                                  <a style="margin-left: 10px; border: none;" class="btn btn-outline-light" href="Controlador?menu=Venta" target="myFrame">Venta</a>
@@ -44,7 +44,9 @@
                                      ${usuario.getNombre()}
                             </button>
                             <div class="dropdown-menu text-center">
-                              
+                                <div>
+                                    <img src="img/usuarioIngresado.png" alt=""/>
+                                </div>
                                 <div>
                                     <a href="#"> gentionar cuenta</a>
                                 </div>
@@ -61,7 +63,7 @@
                  
               </nav>
                             
-                            <div class="m-4" style="height: 550px;">
+                            <div class="m-4" style="height: 62.5rem;">
                                 <iframe name="myFrame" style="height: 100%; width: 100%; border: none"></iframe>
                             </div>
         

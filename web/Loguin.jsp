@@ -23,6 +23,8 @@
                     <form class="form-sing" action="Validar" method="POST">
                         <div class="form-group text-center">
                             <h3>Login</h3>
+                            <img src="img/avatardefault_92824.png" alt="Icono de sesion"/>
+                            <p>Bienvenidos al sistema</p>
                         </div>
                         
                         <div class="form-group">
